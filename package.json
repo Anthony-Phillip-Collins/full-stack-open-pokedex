@@ -18,7 +18,7 @@
     "prepare": "node -e \"if (process.env.NODE_ENV !== 'production'){process.exit(1)} \" || husky install",
     "pre-commit": "lint-staged",
     "pre-push": "npm run test",
-    "act": "act push -e event.json -W .github/workflows/pipeline.yml -s DISCORD_WEBHOOK"
+    "act": "act push -e event.json -W .github/workflows/pipeline.yml"
   },
   "lint-staged": {
     "*.{js,jsx}": ["prettier --write", "eslint --fix"]

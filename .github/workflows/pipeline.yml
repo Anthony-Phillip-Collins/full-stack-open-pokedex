@@ -14,13 +14,13 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: '18.15.0'
-  #     - name: Install dependencies
-  #       run: npm ci
-  #     - name: Run Eslint
-  #       run: npm run eslint
+      #     - uses: actions/setup-node@v3
+      #       with:
+      #         node-version: '18.15.0'
+      #     - name: Install dependencies
+      #       run: npm ci
+      - name: Run Eslint
+        run: npm run eslint
   #     - name: build
   #       run: npm run build
   #     - name: Run Jest
@@ -61,7 +61,7 @@ jobs:
   #       DEFAULT_BUMP: patch
   #       WITH_V: true
   notify_dischord:
-    # if: ${{ (github.event_name == 'push' || github.event.pull_request.merged == true) && (!contains( join(github.event.commits.*.message), '#skip') && !github.event.act) }}
+    if: ${{ (github.event_name == 'push' || github.event.pull_request.merged == true) && (!contains( join(github.event.commits.*.message), '#skip') && !github.event.act) }}
     # needs: tag_release
     runs-on: ubuntu-20.04
     steps:

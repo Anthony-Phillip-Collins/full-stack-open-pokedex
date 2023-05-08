@@ -1,11 +1,6 @@
-# on:
-#   schedule:
-#     - cron: '57 0 * * *'
-
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: '57 23 * * *'
 
 jobs:
   test_schedule:
@@ -14,7 +9,7 @@ jobs:
       - name: Check the deployed service URL
         uses: jtalk/url-health-check-action@v3
         with:
-          url: https://brosef.fly.dev/healths
+          url: https://brosef.fly.dev/healthz
           # Follow redirects, or just report success on 3xx status codes
           follow-redirect: false # Optional, defaults to "false"
           # Fail this action after this many failed attempts

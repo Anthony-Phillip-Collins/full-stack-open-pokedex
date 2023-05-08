@@ -86,7 +86,7 @@ jobs:
 
   notify_dischord:
     if: ${{ !github.event.act }}
-    needs: run_tests
+    needs: tag_release
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
